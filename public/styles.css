@@ -24,8 +24,9 @@ section{
   height:600px;
   width:50%;
 }
-.green{
-  color:rgb(114, 163, 114);
+.grey{
+  color:grey;
+  text-decoration: line-through;
 
 }
 body{

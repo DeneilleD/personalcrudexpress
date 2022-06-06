@@ -1,24 +1,24 @@
 // var thumbUp = document.getElementsByClassName("fa-thumbs-up");
 var trash = document.getElementsByClassName("fa-trash");
-var heart = document.getElementsByClassName("fa-heart");
+var check = document.getElementsByClassName("fa-check");
 
-Array.from(heart).forEach(function(element) {
+Array.from(check).forEach(function(element) {
       element.addEventListener('click', function(e){
         e.preventDefault()
-        const name = this.parentNode.parentNode.childNodes[1].innerText
+        const date = this.parentNode.parentNode.childNodes[1].innerText
         const msg = this.parentNode.parentNode.childNodes[3].innerText
         // msg is coming back undefined***
         console.log(msg)
-        console.log(name)
-        const favorites = e.target.classList.contains('green') ? true : false
+        console.log(date)
+        const complete = e.target.classList.contains('grey') ? true : false
       
-        fetch('favorites', {
+        fetch('complete', {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
-            'name': name,
+            'date': date,
             'msg': msg,
-            'favorited': favorites,
+            'completed': complete,
             // passing these keys names to the server
           })
         })
@@ -65,8 +65,8 @@ Array.from(heart).forEach(function(element) {
 
 Array.from(trash).forEach(function(element) {
   element.addEventListener('click', function(){
-    const name = this.parentNode.parentNode.childNodes[1].innerText
     const msg = this.parentNode.parentNode.childNodes[3].innerText
+    const img = this.parentNode.parentNode.childNodes[1].innerText
     fetch('items', {
       // fetch the form name in the index.js
       method: 'delete',
@@ -74,8 +74,8 @@ Array.from(trash).forEach(function(element) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        'name': name,
-        'msg': msg
+        'msg': msg,
+        'img': img
       })
     }).then(function (response) {
       window.location.reload()

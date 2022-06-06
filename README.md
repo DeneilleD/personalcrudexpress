@@ -1,7 +1,7 @@
 
-# My Affirmations Project
-This project shows a user friendly way to practice your daily affirmations for thr purpose of self-encouragemeent and development.Users can describe their affirmations in detail in a very enlightening manner.
-![alt tag](readme.PNG)
+# My Photo Album Project
+This project shows a user friendly way to share photos to the general public including captions decsribing your favorite photos. Users can describe and delete their posts as they please.
+<!-- ![alt tag](readme.PNG) -->
 
 ## How It's Made:
 
