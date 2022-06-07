@@ -21,19 +21,29 @@ section{
   margin:auto;
   border-radius: 20px;
   background:rgb(233, 244, 181);
-  height:600px;
-  width:50%;
+  height:950px;
+  width:90%;
 }
 .grey{
   color:grey;
   text-decoration: line-through;
 
 }
+.form{
+  clear:both;
+}
 body{
   background-color: #b8c6db;
 background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+height:1000px;
 }
-
+img{
+  border-radius: 20px;
+  float:right;
+  height:70px;
+  width:10%;
+  clear:both;
+}
 h1{
   padding-top:30px;
   text-align: center;
@@ -64,7 +74,7 @@ form input{
 }
 ul li{
   color:rgb(15, 14, 15);
-  padding:10px;
+  padding:20px;
   font-size:20px;
   
 }
@@ -119,10 +129,7 @@ footer{
   margin:auto;
 }
 
-img{
-  float:right;
-  width:30%;
-}
+
 
 p{
   text-align: center;

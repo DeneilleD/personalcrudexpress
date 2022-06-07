@@ -14,14 +14,13 @@
     <h2>Add your favorite photos that bring nostalgic moments of peace !</h2>
 
 
-  <h3>Tasks</h3>
+  <h3>Entires</h3>
   <ul class="messages">
   <% for(var i=0; i<messages.length; i++) {%>
      <!-- if condition inside html to manipulate property -->
 
     <li class="message <%= messages[i].completed ? 'grey' : '' %>" >
-       <img src="<%= messages[i].img %>" alt="pic">
-      <span><%= messages[i].date %></span>
+       <img src="/uploads/<%= messages[i].imgName %>" alt="pic">
       <span><%= messages[i].msg %></span>
      <span><i class="fa-solid fa-check"></i></span>
       <span><i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -33,7 +32,7 @@
   <h2>Image Upload + Captions</h2>
  
   
-  <form action="/items" method="POST" enctype="multipart/form-data">
+  <form class="form" action="/items" method="POST" enctype="multipart/form-data">
     <p><input type="file" name="file"></p>
     <input type="text" placeholder="message" name="msg">
     <p><input type="submit" value="upload"></p>

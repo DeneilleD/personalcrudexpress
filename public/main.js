@@ -5,7 +5,7 @@ var check = document.getElementsByClassName("fa-check");
 Array.from(check).forEach(function(element) {
       element.addEventListener('click', function(e){
         e.preventDefault()
-        const date = this.parentNode.parentNode.childNodes[1].innerText
+        const imgName = this.parentNode.parentNode.childNodes[1].innerText
         const msg = this.parentNode.parentNode.childNodes[3].innerText
         // msg is coming back undefined***
         console.log(msg)
@@ -16,7 +16,7 @@ Array.from(check).forEach(function(element) {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
-            'date': date,
+            'imgName': imgName,
             'msg': msg,
             'completed': complete,
             // passing these keys names to the server
@@ -66,7 +66,7 @@ Array.from(check).forEach(function(element) {
 Array.from(trash).forEach(function(element) {
   element.addEventListener('click', function(){
     const msg = this.parentNode.parentNode.childNodes[3].innerText
-    const img = this.parentNode.parentNode.childNodes[1].innerText
+    const imgName = this.parentNode.parentNode.childNodes[1].innerText
     fetch('items', {
       // fetch the form name in the index.js
       method: 'delete',
@@ -75,7 +75,7 @@ Array.from(trash).forEach(function(element) {
       },
       body: JSON.stringify({
         'msg': msg,
-        'img': img
+        'imgName': imgName
       })
     }).then(function (response) {
       window.location.reload()
