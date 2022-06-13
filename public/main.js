@@ -67,6 +67,8 @@ Array.from(trash).forEach(function(element) {
   element.addEventListener('click', function(){
     const msg = this.parentNode.parentNode.childNodes[3].innerText
     const imgName = this.parentNode.parentNode.childNodes[1].innerText
+    console.log(msg)
+    console.log(imgName)
     fetch('items', {
       // fetch the form name in the index.js
       method: 'delete',

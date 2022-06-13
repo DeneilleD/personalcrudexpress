@@ -117,6 +117,8 @@ app.put("/complete", (req, res) => {
 
 app.delete("/items", (req, res) => {
   // a delete request
+  console.log(req.body.msg)
+  console.log(req.body.imgName)
   db.collection("messages").findOneAndDelete(
     {imgName: req.body.imgName, msg: req.body.msg },
     (err, result) => {
