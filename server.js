@@ -51,6 +51,7 @@ app.post("/items", (req, res) => {
     let file = req.files.file;
     let fileName = file.name;
     console.log(fileName);
+    console.log(req.body.msg);
     file.mv("./public/uploads/" + fileName, function (err, result) {
       if (err) {
         console.log("file mv error", err);
@@ -116,8 +117,8 @@ app.put("/complete", (req, res) => {
 
 app.delete("/items", (req, res) => {
   // a delete request
-  db.collection("tasks").findOneAndDelete(
-    { date: req.body.date, msg: req.body.msg },
+  db.collection("messages").findOneAndDelete(
+    {imgName: req.body.imgName, msg: req.body.msg },
     (err, result) => {
       // find matching name/message object in a database and delete
       if (err) return res.send(500, err);
